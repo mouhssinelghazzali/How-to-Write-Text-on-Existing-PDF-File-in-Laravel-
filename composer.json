@@ -14,7 +14,9 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.4",
         "mouhssinelghazzali/inspire": "^1.0",
-        "power-components/livewire-powergrid": "^2.4"
+        "power-components/livewire-powergrid": "^2.4",
+        "setasign/fpdf": "^1.8",
+        "setasign/fpdi": "^2.3"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

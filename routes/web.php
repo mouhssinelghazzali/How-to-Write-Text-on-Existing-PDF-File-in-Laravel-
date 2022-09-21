@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\AuthController;
 use Simplexi\Greetr\Greetr;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PDFController;
+use App\Http\Controllers\Auth\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,8 @@ use Simplexi\Greetr\Greetr;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('fill-data-pdf', [PDFController::class,'index']);
 
 Route::get('/', function () {
     return view('welcome');
