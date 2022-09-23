@@ -1,9 +1,12 @@
 <?php
 
 use Simplexi\Greetr\Greetr;
+use Jenssegers\Agent\Facades\Agent;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PDFController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\Auth\AuthController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,8 +22,15 @@ use App\Http\Controllers\Auth\AuthController;
 Route::get('fill-data-pdf', [PDFController::class,'index']);
 
 Route::get('/', function () {
-    return view('welcome');
+    $browser = Agent::browser();
+    $version = Agent::version($browser);
+
+    dd($browser, $version);
 });
+
+Route::get('users', [UserController::class, 'index']);
+Route::get('users/{id}', [UserController::class, 'show'])->name('users.show');
+Route::put('users/{id}', [UserController::class, 'update'])->name('users.update');
 
 
 Route::get('/welcome', function () {
